@@ -6,7 +6,8 @@
     <button @click="counter.decrement()">Remove</button>
     <button @click="custom">Custom</button>
     <h2>Students</h2>
-    <p>{{ school.students }}</p>
+    <p>school.students{{ school.students }}</p>
+
     <ul>
       <li
         @click="school.addStudent(student)"
