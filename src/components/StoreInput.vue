@@ -4,18 +4,18 @@
     <form @submit.prevent="store.addStore(inputStore)">
       <label for="storename">Store Name</label>
       <input type="text" id="storename" v-model="inputStore" required />
+      <input id="submit" type="submit" value="Add store" />
     </form>
-    <input id="submit" type="submit" value="Add store" />
   </div>
-  <p>Store:{{ inputStore }}</p>
+  <p>Store:{{ this.inputStore }}</p>
 </template>
 
 <script>
-import { useSchoolStore } from "@/store/storelist";
+import { useListStore } from "@/store/storelist";
 export default {
   name: "StoreInput",
   setup() {
-    const store = useSchoolStore();
+    const store = useListStore();
     return { store };
   },
 };

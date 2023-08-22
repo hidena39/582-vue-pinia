@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>StoreList</p>
-    <p>{{ stores }}</p>
+    <p>{{ store.stores }}</p>
     <ul>
       <li v-for="store in stores" :key="store">
         {{ store }}
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { useSchoolStore } from "@/store/storelist";
+import { useListStore } from "@/store/storelist";
 import StoreInput from "@/components/StoreInput.vue";
 export default {
   name: "StoreList",
@@ -22,13 +22,13 @@ export default {
     StoreInput,
   },
   setup() {
-    const store = useSchoolStore();
+    const store = useListStore();
     return { store };
-  },
-  data() {
-    return {
-      stores: ["Super C", "Amazon", "Jean Coutu"],
-    };
   },
 };
 </script>
+<style lang="scss">
+li {
+  list-style-type: none;
+}
+</style>
