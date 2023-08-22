@@ -1,29 +1,32 @@
 <template>
   <div>
     <p>StoreList</p>
-    <p>{{ store.stores }}</p>
+    <p>{{ liststore.stores }}</p>
     <ul>
       <li v-for="store in stores" :key="store">
-        {{ store }}
+        {{ liststore.store }}
       </li>
     </ul>
   </div>
   <div>
     <StoreInput></StoreInput>
+    <ListStoreSelect></ListStoreSelect>
   </div>
 </template>
 
 <script>
 import { useListStore } from "@/store/storelist";
 import StoreInput from "@/components/StoreInput.vue";
+import ListStoreSelect from "@/components/ListStoreSelect.vue";
 export default {
   name: "StoreList",
   components: {
     StoreInput,
+    ListStoreSelect,
   },
   setup() {
-    const store = useListStore();
-    return { store };
+    const liststore = useListStore();
+    return { liststore };
   },
 };
 </script>
